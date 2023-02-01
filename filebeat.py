@@ -168,6 +168,7 @@ elif choose == 'edit':
     with open('/etc/filebeat/filebeat.yml', 'w') as dump_file:
         yaml.dump(data, dump_file)
         print(json.dumps(data, indent=4))
+    runcmd('systemctl restart filebeat', verbose = True)
 
 else:
     exit
